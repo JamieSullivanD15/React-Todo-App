@@ -1,0 +1,104 @@
+.todo-item {
+  vertical-align: middle;
+  /* The container */
+  /* Create a custom checkbox */
+  /* On mouse-over, add a grey background color */
+  /* When the checkbox is checked, add background color */
+  /* Show the checkmark when checked */ }
+  .todo-item .delete {
+    color: red; }
+    .todo-item .delete .delete-button {
+      border: none;
+      background: none;
+      font-size: 26px;
+      margin: auto;
+      justify-content: center;
+      align-items: center; }
+      .todo-item .delete .delete-button:focus {
+        outline: 0; }
+      .todo-item .delete .delete-button:active {
+        color: #B71C1C;
+        background-color: #F0F0F0;
+        border-radius: 4px; }
+      .todo-item .delete .delete-button .delete-icon {
+        vertical-align: middle; }
+  .todo-item .container {
+    display: block;
+    position: relative;
+    padding-left: 40px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none; }
+    .todo-item .container input {
+      /* Hide the browser's default checkbox */
+      position: absolute;
+      opacity: 0;
+      cursor: pointer; }
+  .todo-item .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    background-color: #eee; }
+    .todo-item .checkmark:after {
+      /* Create the checkmark/indicator (hidden when not checked) */
+      content: "";
+      position: absolute;
+      display: none;
+      /* Style the checkmark/indicator */
+      left: 12px;
+      top: 6px;
+      width: 7px;
+      height: 15px;
+      border: solid white;
+      border-width: 0 3px 3px 0;
+      -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg); }
+  .todo-item .container:hover input ~ .checkmark {
+    background-color: #ccc; }
+  .todo-item .container input:checked ~ .checkmark {
+    background-color: #7FB454; }
+  .todo-item .container input:checked ~ .checkmark:after {
+    display: block; }
+
+body {
+  background-color: #1B4D87; }
+
+.interface {
+  width: 90%;
+  margin: 20% auto;
+  border: 3px solid #030404;
+  border-radius: 5px; }
+  .interface .header {
+    padding: 10px;
+    background-color: #F0F0F0; }
+  .interface .body {
+    padding: 10px;
+    background-color: #fff; }
+  .interface .footer {
+    padding: 20px 10px;
+    background-color: #fff; }
+    .interface .footer .add-button {
+      float: right;
+      background-color: #7FB454;
+      color: #fff;
+      padding: 0;
+      height: 95px;
+      width: 95px;
+      font-size: 60px;
+      border-radius: 50%;
+      box-shadow: 0px 0px 10px 6px #ccc;
+      border: none; }
+      .interface .footer .add-button:hover {
+        background-color: #3B7E41; }
+      .interface .footer .add-button:active {
+        background: #7FB454; }
+      .interface .footer .add-button:focus {
+        outline: 0; }
