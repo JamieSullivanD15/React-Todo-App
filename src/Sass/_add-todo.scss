@@ -1,6 +1,35 @@
+
+.error-text {
+  color: $light-red;
+  padding: 0px 25px;
+  visibility: hidden;
+}
+
+.new-todo {
+  padding: 0px 10px;
+  visibility: hidden;
+
+  .todo-content {
+    input {
+      width: 80%;
+    }
+  }
+
+  .confirm-todo {
+    .confirm-button {
+      @include create-icon-button("green");
+    }
+  }
+
+  .cancel-todo {
+    .cancel-button {
+      @include create-icon-button("red");
+    }
+  }
+} // new-todo
+
 .add-todo {
   padding: 20px 10px;
-  background-color: #fff;
 
   .add-button {
     float: right;
@@ -26,4 +55,4 @@
       outline: 0;
     }
   }
-}
+} // add-todo

@@ -4,7 +4,7 @@
 
   .delete {
     .delete-button {
-      @extend .button-style;
+      @include create-icon-button("red");
 
       .delete-icon {
         vertical-align: middle;

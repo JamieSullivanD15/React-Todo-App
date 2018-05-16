@@ -1,17 +1,3 @@
-.button-style, .todo-item .delete .delete-button, .new-todo .cancel-todo .cancel-button {
-  border: none;
-  background: none;
-  font-size: 26px;
-  font-size: 26px;
-  color: red; }
-  .button-style:focus, .todo-item .delete .delete-button:focus, .new-todo .cancel-todo .cancel-button:focus {
-    outline: 0; }
-  .button-style:hover, .todo-item .delete .delete-button:hover, .new-todo .cancel-todo .cancel-button:hover {
-    color: #B71C1C; }
-  .button-style:active, .todo-item .delete .delete-button:active, .new-todo .cancel-todo .cancel-button:active {
-    background-color: #F0F0F0;
-    border-radius: 4px; }
-
 .todo-item {
   vertical-align: middle;
   /* The container */
@@ -19,8 +5,21 @@
   /* On mouse-over, add a grey background color */
   /* When the checkbox is checked, add background color */
   /* Show the checkmark when checked */ }
-  .todo-item .delete .delete-button .delete-icon {
-    vertical-align: middle; }
+  .todo-item .delete .delete-button {
+    border: none;
+    background: none;
+    font-size: 26px;
+    font-size: 26px;
+    color: red; }
+    .todo-item .delete .delete-button:focus {
+      outline: 0; }
+    .todo-item .delete .delete-button:active {
+      background-color: #F0F0F0;
+      border-radius: 4px; }
+    .todo-item .delete .delete-button:hover {
+      color: #B71C1C; }
+    .todo-item .delete .delete-button .delete-icon {
+      vertical-align: middle; }
   .todo-item .container {
     display: block;
     position: relative;
@@ -67,9 +66,45 @@
   .todo-item .container input:checked ~ .checkmark:after {
     display: block; }
 
+.error-text {
+  color: red;
+  padding: 0px 25px;
+  visibility: hidden; }
+
+.new-todo {
+  padding: 0px 10px;
+  visibility: hidden; }
+  .new-todo .todo-content input {
+    width: 80%; }
+  .new-todo .confirm-todo .confirm-button {
+    border: none;
+    background: none;
+    font-size: 26px;
+    font-size: 26px;
+    color: #7FB454; }
+    .new-todo .confirm-todo .confirm-button:focus {
+      outline: 0; }
+    .new-todo .confirm-todo .confirm-button:active {
+      background-color: #F0F0F0;
+      border-radius: 4px; }
+    .new-todo .confirm-todo .confirm-button:hover {
+      color: #3B7E41; }
+  .new-todo .cancel-todo .cancel-button {
+    border: none;
+    background: none;
+    font-size: 26px;
+    font-size: 26px;
+    color: red; }
+    .new-todo .cancel-todo .cancel-button:focus {
+      outline: 0; }
+    .new-todo .cancel-todo .cancel-button:active {
+      background-color: #F0F0F0;
+      border-radius: 4px; }
+    .new-todo .cancel-todo .cancel-button:hover {
+      color: #B71C1C; }
+
 .add-todo {
-  padding: 20px 10px;
-  background-color: #fff; }
+  padding: 20px 10px; }
   .add-todo .add-button {
     float: right;
     background-color: #7FB454;
@@ -88,26 +123,6 @@
     .add-todo .add-button:focus {
       outline: 0; }
 
-.button-style, .todo-item .delete .delete-button, .new-todo .cancel-todo .cancel-button {
-  border: none;
-  background: none;
-  font-size: 26px;
-  font-size: 26px;
-  color: red; }
-  .button-style:focus, .todo-item .delete .delete-button:focus, .new-todo .cancel-todo .cancel-button:focus {
-    outline: 0; }
-  .button-style:hover, .todo-item .delete .delete-button:hover, .new-todo .cancel-todo .cancel-button:hover {
-    color: #B71C1C; }
-  .button-style:active, .todo-item .delete .delete-button:active, .new-todo .cancel-todo .cancel-button:active {
-    background-color: #F0F0F0;
-    border-radius: 4px; }
-
-.new-todo {
-  padding: 0px 10px;
-  visibility: hidden; }
-  .new-todo .todo-content input {
-    width: 200px; }
-
 body {
   background-color: #1B4D87; }
 
@@ -122,17 +137,3 @@ body {
     background-color: #F0F0F0; }
   .interface .body {
     padding: 10px; }
-
-.button-style, .todo-item .delete .delete-button, .new-todo .cancel-todo .cancel-button {
-  border: none;
-  background: none;
-  font-size: 26px;
-  font-size: 26px;
-  color: red; }
-  .button-style:focus, .todo-item .delete .delete-button:focus, .new-todo .cancel-todo .cancel-button:focus {
-    outline: 0; }
-  .button-style:hover, .todo-item .delete .delete-button:hover, .new-todo .cancel-todo .cancel-button:hover {
-    color: #B71C1C; }
-  .button-style:active, .todo-item .delete .delete-button:active, .new-todo .cancel-todo .cancel-button:active {
-    background-color: #F0F0F0;
-    border-radius: 4px; }

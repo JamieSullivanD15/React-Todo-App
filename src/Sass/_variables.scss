@@ -12,23 +12,32 @@ $dark-red: #B71C1C;
 
 // Palette 2
 
-.button-style {
+@mixin create-icon-button($color) {
   border: none;
   background: none;
   font-size: 26px;
   font-size: 26px;
-  color: $light-red;
 
   &:focus {
     outline: 0;
   }
 
-  &:hover {
-    color: $dark-red;
-  }
-
   &:active {
     background-color: $light-grey;
     border-radius: 4px;
+  }
+
+  @if $color == "red" {
+    color: $light-red;
+
+    &:hover {
+      color: $dark-red;
+    }
+  } @else if $color == "green" {
+    color: $light-green;
+
+    &:hover {
+      color: $dark-green;
+    }
   }
 }
