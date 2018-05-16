@@ -7,8 +7,28 @@ $dark-blue: #1B4D87;
 $black: #030404;
 $light-grey: #F0F0F0;
 $dark-grey: #ccc;
-$light-red: #F44336;
+$light-red: red;
 $dark-red: #B71C1C;
 
-
 // Palette 2
+
+.button-style {
+  border: none;
+  background: none;
+  font-size: 26px;
+  font-size: 26px;
+  color: $light-red;
+
+  &:focus {
+    outline: 0;
+  }
+
+  &:hover {
+    color: $dark-red;
+  }
+
+  &:active {
+    background-color: $light-grey;
+    border-radius: 4px;
+  }
+}

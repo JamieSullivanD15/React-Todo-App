@@ -28,7 +28,6 @@ class TodoItem extends Component {
             </button>
           </Col>
         </Row>
-
       </div>
     );
   }

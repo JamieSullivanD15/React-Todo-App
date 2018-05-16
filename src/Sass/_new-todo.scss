@@ -1,0 +1,18 @@
+@import 'variables';
+
+.new-todo {
+  padding: 0px 10px;
+  visibility: hidden;
+
+  .todo-content {
+    input {
+      width: 200px;
+    }
+  }
+
+  .cancel-todo {
+    .cancel-button {
+      @extend .button-style;
+    }
+  }
+}

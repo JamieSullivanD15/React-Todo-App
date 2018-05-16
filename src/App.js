@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Todos from './Components/Todos';
+import AddTodo from './Components/AddTodo';
 import { Grid, Row, Col } from 'react-bootstrap';
 import uuid from 'uuid';
 import './App.css';
@@ -40,17 +41,8 @@ class App extends Component {
     )
   }
 
-  componentWillMount() {
-    this.getTodos();
-  }
-
-  componentDidMount() {
-    console.log(this.state.todoList);
-    console.log(this.state.date);
-  }
-
   formatDate() {
-    let today = new Date();
+    const today = new Date();
     let date;
     let subscript;
 
@@ -92,6 +84,22 @@ class App extends Component {
     return date + ', ' + today.getDate() + subscript;
   }
 
+  componentWillMount() {
+    this.getTodos();
+  }
+
+  componentDidMount() {
+    // console.log(this.state.todoList);
+    // console.log(this.state.date);
+  }
+
+  handleSubmitTodo(todo) {
+    let todos = this.state.todoList;
+    todos.push(todo);
+    this.setState({todoList: todos})
+    console.log(todos);
+  }
+
   render() {
     return (
       <div className="todo-app">
@@ -113,11 +121,7 @@ class App extends Component {
             </Col>
           </Row>
 
-          <Row className="footer">
-            <Col xs={12}>
-              <button className="add-button">+</button>
-            </Col>
-          </Row>
+          <AddTodo addTodo={this.handleSubmitTodo.bind(this)} />
 
         </Grid>
       </div>

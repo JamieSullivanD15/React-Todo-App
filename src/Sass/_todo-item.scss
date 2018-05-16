@@ -3,32 +3,14 @@
   vertical-align: middle;
 
   .delete {
-    color: red;
-
     .delete-button {
-      border: none;
-      background: none;
-      font-size: 26px;
-      margin: auto;
-      justify-content: center;
-      align-items: center;
-
-      &:focus {
-        outline: 0;
-      }
-
-      &:active {
-        color: $dark-red;
-        background-color: $light-grey;
-        border-radius: 4px;
-      }
+      @extend .button-style;
 
       .delete-icon {
         vertical-align: middle;
-        //padding: 6px 0;
       }
     }
-  } // delete
+  }
 
   /* The container */
   .container {
