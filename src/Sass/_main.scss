@@ -42,11 +42,11 @@ body {
       width: 95px;
       font-size: 60px;
       border-radius: 50%;
-      box-shadow: 0px 0px 10px 6px $dark-grey;
+      box-shadow: 1px 2px 10px 6px $dark-grey;
       border: none;
 
       &:hover {
-        background-color: $dark-green;
+        background-color: $dark-blue;
       }
 
       &:active {

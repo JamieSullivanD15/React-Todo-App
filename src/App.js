@@ -7,8 +7,11 @@ import './App.css';
 class App extends Component {
   constructor() {
     super();
+
     this.state = {
-      todoList: []
+      todoList: [],
+      date: this.formatDate(),
+      month: new Date().toString().split(' ')[1]
     }
   }
 
@@ -19,15 +22,18 @@ class App extends Component {
         todoList: [
           {
             id: uuid.v4(),
-            content: 'Test Todo Item 1'
+            content: 'Test Todo Item 1',
+            isCompleted: false
           },
           {
             id: uuid.v4(),
-            content: 'Test Todo Item 2'
+            content: 'Test Todo Item 2',
+            isCompleted: false
           },
           {
             id: uuid.v4(),
-            content: 'Test Todo Item 3'
+            content: 'Test Todo Item 3',
+            isCompleted: false
           }
         ]
       }
@@ -40,6 +46,50 @@ class App extends Component {
 
   componentDidMount() {
     console.log(this.state.todoList);
+    console.log(this.state.date);
+  }
+
+  formatDate() {
+    let today = new Date();
+    let date;
+    let subscript;
+
+    if(today.getDate() === 1 || today.getDate() === 31 || today.getDate() === 21) {
+      subscript = 'st';
+    } else if(today.getDate() === 2  || today.getDate() === 22) {
+      subscript = 'nd';
+    } else if(today.getDate() === 3 || today.getDate() === 23) {
+      subscript = 'rd';
+    } else {
+      subscript = 'th';
+    }
+
+    switch (today.getDay()) {
+      case 0:
+        date = 'Sunday'
+        break;
+      case 1:
+        date = 'Monday'
+        break;
+      case 2:
+        date = 'Tuesday'
+        break;
+      case 3:
+        date = 'Wednesday'
+        break;
+      case 4:
+        date = 'Thursday'
+        break;
+      case 5:
+        date = 'Friday'
+        break;
+      case 6:
+        date = 'Saturday'
+        break;
+      default:
+    }
+
+    return date + ', ' + today.getDate() + subscript;
   }
 
   render() {
@@ -49,11 +99,11 @@ class App extends Component {
 
           <Row className="header">
             <Col className="date" xs={6}>
-              <h1>Tuesday, 15th</h1>
-              <h2>May</h2>
+              <h1>{this.state.date}</h1>
+              <h2>{this.state.month}</h2>
             </Col>
             <Col className="num-of-tasks" xs={6}>
-              <h2>6 Tasks</h2>
+              <h2>6 Tasks Pending</h2>
             </Col>
           </Row>
 

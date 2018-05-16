@@ -94,10 +94,10 @@ body {
       width: 95px;
       font-size: 60px;
       border-radius: 50%;
-      box-shadow: 0px 0px 10px 6px #ccc;
+      box-shadow: 1px 2px 10px 6px #ccc;
       border: none; }
       .interface .footer .add-button:hover {
-        background-color: #3B7E41; }
+        background-color: #1B4D87; }
       .interface .footer .add-button:active {
         background: #7FB454; }
       .interface .footer .add-button:focus {

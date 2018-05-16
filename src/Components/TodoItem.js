@@ -7,15 +7,18 @@ class TodoItem extends Component {
     this.props.onDelete(id);
   }
 
+  toggleCheckbox(element) {
+    element.props.todoItem.isCompleted = !element.props.todoItem.isCompleted;
+  }
+
   render() {
     return (
       <div>
-
         <Row className="todo-item">
           <Col className="todo-content" xs={10}>
             <label className="container">
               {this.props.todoItem.content}
-              <input type="checkbox"></input>
+              <input type="checkbox" onChange={() => this.toggleCheckbox(this)}></input>
               <span className="checkmark"></span>
             </label>
           </Col>
