@@ -1,0 +1,53 @@
+
+.error-text {
+  color: $light-red;
+  padding: 0px 25px;
+  visibility: hidden;
+}
+
+.new-todo {
+  padding: 0px 10px;
+  visibility: hidden;
+
+  .todo-content {
+    input {
+      width: 80%;
+    }
+  }
+
+  .confirm-todo {
+    .confirm-button {
+      @include create-icon-button("green");
+    }
+  }
+
+  .cancel-todo {
+    .cancel-button {
+      @include create-icon-button("red");
+    }
+  }
+} // new-todo
+
+.footer {
+  padding: 20px 10px;
+  display: flex;
+  align-items: center;
+
+  .clear-button {
+    @include create-footer-button("red");
+    float: left;
+    font-size: 22px;
+    border-radius: 5px;
+    padding: 5px 15px;
+  }
+
+  .add-button {
+    @include create-footer-button("green");
+    float: right;
+    padding: 0;
+    height: 95px;
+    width: 95px;
+    font-size: 60px;
+    border-radius: 50%;
+  }
+} // footer

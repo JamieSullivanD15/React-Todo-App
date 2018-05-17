@@ -9,7 +9,6 @@
     border: none;
     background: none;
     font-size: 26px;
-    font-size: 26px;
     color: red; }
     .todo-item .delete .delete-button:focus {
       outline: 0; }
@@ -80,7 +79,6 @@
     border: none;
     background: none;
     font-size: 26px;
-    font-size: 26px;
     color: #7FB454; }
     .new-todo .confirm-todo .confirm-button:focus {
       outline: 0; }
@@ -93,7 +91,6 @@
     border: none;
     background: none;
     font-size: 26px;
-    font-size: 26px;
     color: red; }
     .new-todo .cancel-todo .cancel-button:focus {
       outline: 0; }
@@ -103,25 +100,42 @@
     .new-todo .cancel-todo .cancel-button:hover {
       color: #B71C1C; }
 
-.add-todo {
-  padding: 20px 10px; }
-  .add-todo .add-button {
-    float: right;
-    background-color: #7FB454;
+.footer {
+  padding: 20px 10px;
+  display: flex;
+  align-items: center; }
+  .footer .clear-button {
+    border: none;
     color: #fff;
+    box-shadow: 1px 3px 10px 6px #ccc;
+    background-color: red;
+    float: left;
+    font-size: 22px;
+    border-radius: 5px;
+    padding: 5px 15px; }
+    .footer .clear-button:focus {
+      outline: 0; }
+    .footer .clear-button:hover {
+      background-color: #B71C1C; }
+    .footer .clear-button:active {
+      background-color: red; }
+  .footer .add-button {
+    border: none;
+    color: #fff;
+    box-shadow: 1px 3px 10px 6px #ccc;
+    background-color: #7FB454;
+    float: right;
     padding: 0;
     height: 95px;
     width: 95px;
     font-size: 60px;
-    border-radius: 50%;
-    box-shadow: 1px 2px 10px 6px #ccc;
-    border: none; }
-    .add-todo .add-button:hover {
-      background-color: #1B4D87; }
-    .add-todo .add-button:active {
-      background: #7FB454; }
-    .add-todo .add-button:focus {
+    border-radius: 50%; }
+    .footer .add-button:focus {
       outline: 0; }
+    .footer .add-button:hover {
+      background-color: #3B7E41; }
+    .footer .add-button:active {
+      background-color: #7FB454; }
 
 body {
   background-color: #1B4D87; }
