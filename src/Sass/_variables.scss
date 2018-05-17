@@ -16,7 +16,6 @@ $dark-red: #B71C1C;
   border: none;
   background: none;
   font-size: 26px;
-  font-size: 26px;
 
   &:focus {
     outline: 0;
@@ -38,6 +37,39 @@ $dark-red: #B71C1C;
 
     &:hover {
       color: $dark-green;
+    }
+  }
+}
+
+@mixin create-footer-button($color) {
+  border: none;
+  color: #fff;
+  box-shadow: 1px 3px 10px 6px $dark-grey;
+
+  &:focus {
+    outline: 0;
+  }
+
+  @if $color == "red" {
+    background-color: $light-red;
+
+    &:hover {
+      background-color: $dark-red;
+    }
+
+    &:active {
+      background-color: $light-red;
+    }
+
+  } @else if $color == "green" {
+    background-color: $light-green;
+
+    &:hover {
+      background-color: $dark-green;
+    }
+
+    &:active {
+      background-color: $light-green;
     }
   }
 }

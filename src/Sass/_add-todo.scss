@@ -28,31 +28,26 @@
   }
 } // new-todo
 
-.add-todo {
+.footer {
   padding: 20px 10px;
+  display: flex;
+  align-items: center;
+
+  .clear-button {
+    @include create-footer-button("red");
+    float: left;
+    font-size: 22px;
+    border-radius: 5px;
+    padding: 5px 15px;
+  }
 
   .add-button {
+    @include create-footer-button("green");
     float: right;
-    background-color: $light-green;
-    color: #fff;
     padding: 0;
     height: 95px;
     width: 95px;
     font-size: 60px;
     border-radius: 50%;
-    box-shadow: 1px 2px 10px 6px $dark-grey;
-    border: none;
-
-    &:hover {
-      background-color: $dark-blue;
-    }
-
-    &:active {
-      background: $light-green;
-    }
-
-    &:focus {
-      outline: 0;
-    }
   }
-} // add-todo
+} // footer

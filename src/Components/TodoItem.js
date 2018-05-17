@@ -3,12 +3,19 @@ import { Glyphicon, Row, Col } from 'react-bootstrap';
 
 class TodoItem extends Component {
 
-  deleteTodo(id) {
-    this.props.onDelete(id);
+  componentDidMount() {
+    if(this.props.todoItem.isCompleted) {
+      this.refs.todoCheckbox.checked = true;
+    }
+  }
+
+  deleteTodoItem() {
+    this.props.deleteTodoItem(this.props.todoItem);
   }
 
   toggleCheckbox(element) {
     element.props.todoItem.isCompleted = !element.props.todoItem.isCompleted;
+    this.props.updateTodoItem(this.props.todoItem);
   }
 
   render() {
@@ -18,12 +25,12 @@ class TodoItem extends Component {
           <Col className="todo-content" xs={10}>
             <label className="container">
               {this.props.todoItem.content}
-              <input type="checkbox" onChange={() => this.toggleCheckbox(this)}></input>
+              <input type="checkbox" ref="todoCheckbox" onChange={() => this.toggleCheckbox(this)}></input>
               <span className="checkmark"></span>
             </label>
           </Col>
           <Col className="delete" xs={2}>
-            <button className="delete-button">
+            <button className="delete-button" onClick={() => {this.deleteTodoItem(this)}} >
               <Glyphicon className="delete-icon" glyph="trash" />
             </button>
           </Col>

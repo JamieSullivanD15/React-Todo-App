@@ -9,12 +9,14 @@ class AddTodo extends Component {
     this.state = {
       newTodo: {}
     }
+
+    this.submitTodo = this.submitTodo.bind(this);
+    this.cancelNewTodo = this.cancelNewTodo.bind(this);
   }
 
   submitTodo(e) {
     if(this.refs.content.value === '') {
-      const errorText = document.querySelector('.error-text');
-      errorText.style.visibility = 'visible';
+      document.querySelector('.error-text').style.visibility = 'visible';
     } else {
       this.setState({
         newTodo: {
@@ -31,15 +33,17 @@ class AddTodo extends Component {
 
   cancelNewTodo() {
     const newTodo = document.querySelector('.new-todo');
-    const errorText = document.querySelector('.error-text');
-    errorText.style.visibility = 'hidden';
+    document.querySelector('.error-text').style.visibility = 'hidden';
     newTodo.style.visibility = 'hidden';
     newTodo.firstChild.firstChild.firstChild.value = '';
   }
 
   showTodoInput() {
-    const newTodo = document.querySelector('.new-todo');
-    newTodo.style.visibility = 'visible';
+    document.querySelector('.new-todo').style.visibility = 'visible';
+  }
+
+  clearAll() {
+    this.props.clearAll();
   }
 
   render() {
@@ -48,7 +52,7 @@ class AddTodo extends Component {
         <Row className="new-todo">
           <form onSubmit={this.submitTodo.bind(this)}>
             <Col className="todo-content" xs={9}>
-                <input type="text" ref="content"></input>
+              <input type="text" ref="content" />
             </Col>
           </form>
 
@@ -59,7 +63,7 @@ class AddTodo extends Component {
           </Col>
 
           <Col className="cancel-todo" xs={1}>
-            <button className="cancel-button" onClick={() => {this.cancelNewTodo()}}>
+            <button className="cancel-button" onClick={this.cancelNewTodo}>
               <Glyphicon className="cancel-icon" glyph="remove" />
             </button>
           </Col>
@@ -69,8 +73,11 @@ class AddTodo extends Component {
           Please enter a value.
         </Row>
 
-        <Row className="add-todo">
-          <Col xs={12}>
+        <Row className="footer">
+          <Col xs={6}>
+            <button className="clear-button" onClick={this.clearAll.bind(this)}>Clear All</button>
+          </Col>
+          <Col xs={6}>
             <button className="add-button" onClick={ this.showTodoInput}>+</button>
           </Col>
         </Row>
