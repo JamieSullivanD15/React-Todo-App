@@ -12,63 +12,51 @@ class App extends Component {
       day: this.formatDate(new Date()),
       month: new Date().toString().split(' ')[1]
     }
+
+    this.getTasksPending = this.getTasksPending.bind(this);
   }
 
-  formatDate(date) {
-    let day;
-    let subscript;
-
-    if(date.getDate() === 1 || date.getDate() === 31 || date.getDate() === 21) {
-      subscript = 'st';
-    } else if(date.getDate() === 2  || date.getDate() === 22) {
-      subscript = 'nd';
-    } else if(date.getDate() === 3 || date.getDate() === 23) {
-      subscript = 'rd';
-    } else {
-      subscript = 'th';
-    }
-
-    switch (date.getDay()) {
-      case 0:
-        day = 'Sunday'
-        break;
-      case 1:
-        day = 'Monday'
-        break;
-      case 2:
-        day = 'Tuesday'
-        break;
-      case 3:
-        day = 'Wednesday'
-        break;
-      case 4:
-        day = 'Thursday'
-        break;
-      case 5:
-        day = 'Friday'
-        break;
-      case 6:
-        day = 'Saturday'
-        break;
-      default:
-    }
-
-    return day + ', ' + date.getDate() + subscript;
-  }
-
-  componentWillMount() {
+  componentDidMount() {
     this.getTodos();
   }
 
   // Function will set state with todo items from local storage
   getTodos(checkbox) {
     const todos = this.createLocalStorageTodos();
+
     this.setState({
       todoList: todos.map(todo => {
-        // console.log(todo);
         return todo;
       })
     });
+
+    this.getTasksPending(todos);
+  }
+
+  getTasksPending(todos) {
+    let count = 0;
+
+    todos.forEach((todo) => {
+      if(!todo.isCompleted) {
+        ++count;
+      }
+    });
+
+    this.refs.tasksPendingCount.innerHTML = count;
+    this.refs.tasksPendingCount.innerHTML === 1 ? this.refs.tasksPendingText.innerHTML = ' Task Pending' :
+    this.refs.tasksPendingText.innerHTML = ' Tasks Pending';
+  }
+
+  createLocalStorageTodos() {
+    let todos;
+
+    if(localStorage.getItem('todos') === null) {
+      todos = [];
+    } else {
+      todos = JSON.parse(localStorage.getItem('todos'));
+    }
+
+    return todos;
   }
 
   handleSaveTodo(todo) {
@@ -109,16 +97,46 @@ class App extends Component {
     this.getTodos();
   }
 
-  createLocalStorageTodos() {
-    let todos;
+  formatDate(date) {
+    let day;
+    let subscript;
 
-    if(localStorage.getItem('todos') === null) {
-      todos = [];
+    if(date.getDate() === 1 || date.getDate() === 31 || date.getDate() === 21) {
+      subscript = 'st ';
+    } else if(date.getDate() === 2  || date.getDate() === 22) {
+      subscript = 'nd ';
+    } else if(date.getDate() === 3 || date.getDate() === 23) {
+      subscript = 'rd ';
     } else {
-      todos = JSON.parse(localStorage.getItem('todos'));
+      subscript = 'th ';
     }
 
-    return todos;
+    switch (date.getDay()) {
+      case 0:
+        day = 'Sunday'
+        break;
+      case 1:
+        day = 'Monday'
+        break;
+      case 2:
+        day = 'Tuesday'
+        break;
+      case 3:
+        day = 'Wednesday'
+        break;
+      case 4:
+        day = 'Thursday'
+        break;
+      case 5:
+        day = 'Friday'
+        break;
+      case 6:
+        day = 'Saturday'
+        break;
+      default:
+    }
+
+    return day + ', ' + date.getDate() + subscript;
   }
 
   render() {
@@ -127,12 +145,15 @@ class App extends Component {
         <Grid className="interface">
 
           <Row className="header">
-            <Col className="day" xs={6}>
-              <h1>{this.state.day}</h1>
-              <h2>{this.state.month}</h2>
+            <Col className="date" sm={6}>
+              <span>
+                {this.state.day}
+                {this.state.month}
+              </span>
             </Col>
-            <Col className="num-of-tasks" xs={6}>
-              <h2>{this.state.todoList.length} Tasks Pending</h2>
+            <Col className="num-of-tasks" sm={6}>
+              <span ref="tasksPendingCount"></span>
+              <span ref="tasksPendingText"></span>
             </Col>
           </Row>
 

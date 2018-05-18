@@ -75,10 +75,10 @@ class AddTodo extends Component {
 
         <Row className="footer">
           <Col xs={6}>
-            <button className="clear-button" onClick={this.clearAll.bind(this)}>Clear All</button>
+            <button className="add-button" onClick={ this.showTodoInput}>+</button>
           </Col>
           <Col xs={6}>
-            <button className="add-button" onClick={ this.showTodoInput}>+</button>
+            <button className="clear-button" onClick={this.clearAll.bind(this)}>Clear All</button>
           </Col>
         </Row>
       </div>
