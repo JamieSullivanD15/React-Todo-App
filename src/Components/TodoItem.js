@@ -4,17 +4,28 @@ import { Glyphicon, Row, Col } from 'react-bootstrap';
 class TodoItem extends Component {
 
   componentDidMount() {
-    if(this.props.todoItem.isCompleted) {
-      this.refs.todoCheckbox.checked = true;
-    }
+    this.checkIfPending(this.props.todoItem);
   }
 
   deleteTodoItem() {
     this.props.deleteTodoItem(this.props.todoItem);
   }
 
-  toggleCheckbox(element) {
-    element.props.todoItem.isCompleted = !element.props.todoItem.isCompleted;
+  checkIfPending(todoItem) {
+    const content = this.refs.todoContent;
+
+    if(todoItem.isCompleted) {
+      this.refs.todoCheckbox.checked = true;
+      content.className = 'completed-todo';
+    } else {
+      content.className = 'pending-todo';
+    }
+  }
+
+  toggleCheckbox() {
+    this.props.todoItem.isCompleted = !this.props.todoItem.isCompleted;
+
+    this.checkIfPending(this.props.todoItem);
     this.props.updateTodoItem(this.props.todoItem);
   }
 
@@ -22,9 +33,11 @@ class TodoItem extends Component {
     return (
       <div>
         <Row className="todo-item">
-          <Col className="todo-content" xs={10}>
+          <Col xs={10}>
             <label className="container">
-              {this.props.todoItem.content}
+              <span ref="todoContent">
+                {this.props.todoItem.content}
+              </span>
               <input type="checkbox" ref="todoCheckbox" onChange={() => this.toggleCheckbox(this)}></input>
               <span className="checkmark"></span>
             </label>

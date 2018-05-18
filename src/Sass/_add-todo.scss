@@ -6,22 +6,28 @@
 }
 
 .new-todo {
-  padding: 0px 10px;
+  padding: 0 30px;
   visibility: hidden;
 
   .todo-content {
     input {
-      width: 80%;
+      width: 100%;
+      //margin-left: 20px;
     }
   }
 
   .confirm-todo {
+    float: right;
+
     .confirm-button {
       @include create-icon-button("green");
     }
   }
 
   .cancel-todo {
+    float: right;
+    //margin-right: 15px;
+
     .cancel-button {
       @include create-icon-button("red");
     }

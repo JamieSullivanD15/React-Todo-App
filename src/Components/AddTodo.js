@@ -51,20 +51,20 @@ class AddTodo extends Component {
       <div>
         <Row className="new-todo">
           <form onSubmit={this.submitTodo.bind(this)}>
-            <Col className="todo-content" xs={9}>
+            <Col className="todo-content" xs={8}>
               <input type="text" ref="content" />
             </Col>
           </form>
 
-          <Col className="confirm-todo" xs={1}>
-            <button className="confirm-button" onClick={this.submitTodo.bind(this)}>
-              <Glyphicon className="confirm-icon" glyph="ok" />
-            </button>
-          </Col>
-
           <Col className="cancel-todo" xs={1}>
             <button className="cancel-button" onClick={this.cancelNewTodo}>
               <Glyphicon className="cancel-icon" glyph="remove" />
+            </button>
+          </Col>
+
+          <Col className="confirm-todo" xs={1}>
+            <button className="confirm-button" onClick={this.submitTodo.bind(this)}>
+              <Glyphicon className="confirm-icon" glyph="ok" />
             </button>
           </Col>
         </Row>

@@ -9,8 +9,7 @@ class App extends Component {
     super();
     this.state = {
       todoList: [],
-      day: this.formatDate(new Date()),
-      month: new Date().toString().split(' ')[1]
+      date: this.formatDate(new Date())
     }
 
     this.getTasksPending = this.getTasksPending.bind(this);
@@ -43,8 +42,7 @@ class App extends Component {
     });
 
     this.refs.tasksPendingCount.innerHTML = count;
-    this.refs.tasksPendingCount.innerHTML === 1 ? this.refs.tasksPendingText.innerHTML = ' Task Pending' :
-    this.refs.tasksPendingText.innerHTML = ' Tasks Pending';
+    count === 1 ? this.refs.tasksPendingText.innerHTML = ' Task Pending' : this.refs.tasksPendingText.innerHTML = ' Tasks Pending';
   }
 
   createLocalStorageTodos() {
@@ -100,10 +98,11 @@ class App extends Component {
   formatDate(date) {
     let day;
     let subscript;
+    let month = date.toString().split(' ')[1];
 
     if(date.getDate() === 1 || date.getDate() === 31 || date.getDate() === 21) {
       subscript = 'st ';
-    } else if(date.getDate() === 2  || date.getDate() === 22) {
+    } else if(date.getDate() === 2 || date.getDate() === 22) {
       subscript = 'nd ';
     } else if(date.getDate() === 3 || date.getDate() === 23) {
       subscript = 'rd ';
@@ -136,7 +135,7 @@ class App extends Component {
       default:
     }
 
-    return day + ', ' + date.getDate() + subscript;
+    return day + ', ' + date.getDate() + subscript + ' ' + month;
   }
 
   render() {
@@ -147,8 +146,7 @@ class App extends Component {
           <Row className="header">
             <Col className="date" sm={6}>
               <span>
-                {this.state.day}
-                {this.state.month}
+                {this.state.date}
               </span>
             </Col>
             <Col className="num-of-tasks" sm={6}>

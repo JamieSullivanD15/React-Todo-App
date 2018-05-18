@@ -1,15 +1,20 @@
 .todo-item {
   vertical-align: middle;
+  word-wrap: break-word;
   /* The container */
   /* Create a custom checkbox */
   /* On mouse-over, add a grey background color */
   /* When the checkbox is checked, add background color */
   /* Show the checkmark when checked */ }
+  .todo-item .completed-todo {
+    text-decoration: line-through;
+    color: #ccc; }
   .todo-item .delete .delete-button {
     border: none;
     background: none;
     font-size: 26px;
-    color: red; }
+    color: red;
+    float: right; }
     .todo-item .delete .delete-button:focus {
       outline: 0; }
     .todo-item .delete .delete-button:active {
@@ -71,34 +76,38 @@
   visibility: hidden; }
 
 .new-todo {
-  padding: 0px 10px;
+  padding: 0 30px;
   visibility: hidden; }
   .new-todo .todo-content input {
-    width: 80%; }
-  .new-todo .confirm-todo .confirm-button {
-    border: none;
-    background: none;
-    font-size: 26px;
-    color: #7FB454; }
-    .new-todo .confirm-todo .confirm-button:focus {
-      outline: 0; }
-    .new-todo .confirm-todo .confirm-button:active {
-      background-color: #F0F0F0;
-      border-radius: 4px; }
-    .new-todo .confirm-todo .confirm-button:hover {
-      color: #3B7E41; }
-  .new-todo .cancel-todo .cancel-button {
-    border: none;
-    background: none;
-    font-size: 26px;
-    color: red; }
-    .new-todo .cancel-todo .cancel-button:focus {
-      outline: 0; }
-    .new-todo .cancel-todo .cancel-button:active {
-      background-color: #F0F0F0;
-      border-radius: 4px; }
-    .new-todo .cancel-todo .cancel-button:hover {
-      color: #B71C1C; }
+    width: 100%; }
+  .new-todo .confirm-todo {
+    float: right; }
+    .new-todo .confirm-todo .confirm-button {
+      border: none;
+      background: none;
+      font-size: 26px;
+      color: #7FB454; }
+      .new-todo .confirm-todo .confirm-button:focus {
+        outline: 0; }
+      .new-todo .confirm-todo .confirm-button:active {
+        background-color: #F0F0F0;
+        border-radius: 4px; }
+      .new-todo .confirm-todo .confirm-button:hover {
+        color: #3B7E41; }
+  .new-todo .cancel-todo {
+    float: right; }
+    .new-todo .cancel-todo .cancel-button {
+      border: none;
+      background: none;
+      font-size: 26px;
+      color: red; }
+      .new-todo .cancel-todo .cancel-button:focus {
+        outline: 0; }
+      .new-todo .cancel-todo .cancel-button:active {
+        background-color: #F0F0F0;
+        border-radius: 4px; }
+      .new-todo .cancel-todo .cancel-button:hover {
+        color: #B71C1C; }
 
 .footer {
   padding: 20px 10px;
@@ -147,10 +156,10 @@ body {
   background-color: #fff;
   min-height: 60vh; }
   .interface .header {
-    padding: 10px;
+    padding: 20px 10px;
     background-color: #F0F0F0;
     border-radius: 6px; }
     .interface .header span {
       font-size: 30px; }
   .interface .body {
-    padding: 10px; }
+    padding: 20px 10px; }
