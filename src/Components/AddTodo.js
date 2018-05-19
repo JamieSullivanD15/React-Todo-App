@@ -43,7 +43,9 @@ class AddTodo extends Component {
   }
 
   clearAll() {
-    this.props.clearAll();
+    if (window.confirm('Delete all tasks?')) {
+      this.props.clearAll();
+    }
   }
 
   render() {
@@ -81,6 +83,7 @@ class AddTodo extends Component {
             <button className="clear-button" onClick={this.clearAll.bind(this)}>Clear All</button>
           </Col>
         </Row>
+
       </div>
     );
   }
