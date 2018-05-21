@@ -43,7 +43,9 @@ class AddTodo extends Component {
   }
 
   clearAll() {
-    this.props.clearAll();
+    if (window.confirm('Delete all tasks?')) {
+      this.props.clearAll();
+    }
   }
 
   render() {
@@ -51,20 +53,20 @@ class AddTodo extends Component {
       <div>
         <Row className="new-todo">
           <form onSubmit={this.submitTodo.bind(this)}>
-            <Col className="todo-content" xs={9}>
+            <Col className="todo-content" xs={8} md={10}>
               <input type="text" ref="content" />
             </Col>
           </form>
 
-          <Col className="confirm-todo" xs={1}>
-            <button className="confirm-button" onClick={this.submitTodo.bind(this)}>
-              <Glyphicon className="confirm-icon" glyph="ok" />
+          <Col className="cancel-todo" xs={1} md={1}>
+            <button className="cancel-button" onClick={this.cancelNewTodo}>
+              <Glyphicon className="cancel-icon" glyph="remove" />
             </button>
           </Col>
 
-          <Col className="cancel-todo" xs={1}>
-            <button className="cancel-button" onClick={this.cancelNewTodo}>
-              <Glyphicon className="cancel-icon" glyph="remove" />
+          <Col className="confirm-todo" xs={1} md={1}>
+            <button className="confirm-button" onClick={this.submitTodo.bind(this)}>
+              <Glyphicon className="confirm-icon" glyph="ok" />
             </button>
           </Col>
         </Row>
@@ -75,12 +77,15 @@ class AddTodo extends Component {
 
         <Row className="footer">
           <Col xs={6}>
-            <button className="clear-button" onClick={this.clearAll.bind(this)}>Clear All</button>
+            <span >
+              <button className="add-button" onClick={ this.showTodoInput}>+</button>
+            </span>
           </Col>
           <Col xs={6}>
-            <button className="add-button" onClick={ this.showTodoInput}>+</button>
+            <button className="clear-button" onClick={this.clearAll.bind(this)}>Clear All</button>
           </Col>
         </Row>
+
       </div>
     );
   }

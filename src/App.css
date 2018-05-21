@@ -1,22 +1,39 @@
+.heading-font, .interface .header span {
+  font-size: 30px; }
+
+.task-font, .todo-item .container {
+  font-size: 26px; }
+
+.add-button-font, .footer .add-button {
+  font-size: 55px; }
+
+.clear-button-font, .footer .clear-button {
+  font-size: 22px; }
+
 .todo-item {
   vertical-align: middle;
+  word-wrap: break-word;
   /* The container */
   /* Create a custom checkbox */
   /* On mouse-over, add a grey background color */
   /* When the checkbox is checked, add background color */
   /* Show the checkmark when checked */ }
+  .todo-item .completed-todo {
+    text-decoration: line-through;
+    color: #CFD8DC; }
   .todo-item .delete .delete-button {
     border: none;
     background: none;
     font-size: 26px;
-    color: red; }
+    color: #e20c28;
+    float: right; }
     .todo-item .delete .delete-button:focus {
       outline: 0; }
     .todo-item .delete .delete-button:active {
-      background-color: #F0F0F0;
+      background-color: #ECEFF1;
       border-radius: 4px; }
     .todo-item .delete .delete-button:hover {
-      color: #B71C1C; }
+      color: #8f0a0b; }
     .todo-item .delete .delete-button .delete-icon {
       vertical-align: middle; }
   .todo-item .container {
@@ -25,11 +42,11 @@
     padding-left: 40px;
     margin-bottom: 12px;
     cursor: pointer;
-    font-size: 22px;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
-    user-select: none; }
+    user-select: none;
+    color: #030404; }
     .todo-item .container input {
       /* Hide the browser's default checkbox */
       position: absolute;
@@ -59,46 +76,51 @@
       -ms-transform: rotate(45deg);
       transform: rotate(45deg); }
   .todo-item .container:hover input ~ .checkmark {
-    background-color: #ccc; }
+    background-color: #CFD8DC; }
   .todo-item .container input:checked ~ .checkmark {
-    background-color: #7FB454; }
+    background-color: #7cad3e; }
   .todo-item .container input:checked ~ .checkmark:after {
     display: block; }
 
 .error-text {
-  color: red;
-  padding: 0px 25px;
-  visibility: hidden; }
+  color: #e20c28;
+  padding-left: 45px;
+  visibility: hidden;
+  font-size: 18px; }
 
 .new-todo {
-  padding: 0px 10px;
+  padding: 0 30px;
   visibility: hidden; }
   .new-todo .todo-content input {
-    width: 80%; }
-  .new-todo .confirm-todo .confirm-button {
-    border: none;
-    background: none;
-    font-size: 26px;
-    color: #7FB454; }
-    .new-todo .confirm-todo .confirm-button:focus {
-      outline: 0; }
-    .new-todo .confirm-todo .confirm-button:active {
-      background-color: #F0F0F0;
-      border-radius: 4px; }
-    .new-todo .confirm-todo .confirm-button:hover {
-      color: #3B7E41; }
-  .new-todo .cancel-todo .cancel-button {
-    border: none;
-    background: none;
-    font-size: 26px;
-    color: red; }
-    .new-todo .cancel-todo .cancel-button:focus {
-      outline: 0; }
-    .new-todo .cancel-todo .cancel-button:active {
-      background-color: #F0F0F0;
-      border-radius: 4px; }
-    .new-todo .cancel-todo .cancel-button:hover {
-      color: #B71C1C; }
+    width: 100%; }
+  .new-todo .confirm-todo {
+    float: right; }
+    .new-todo .confirm-todo .confirm-button {
+      border: none;
+      background: none;
+      font-size: 26px;
+      color: #7cad3e; }
+      .new-todo .confirm-todo .confirm-button:focus {
+        outline: 0; }
+      .new-todo .confirm-todo .confirm-button:active {
+        background-color: #ECEFF1;
+        border-radius: 4px; }
+      .new-todo .confirm-todo .confirm-button:hover {
+        color: #4a6c2f; }
+  .new-todo .cancel-todo {
+    float: right; }
+    .new-todo .cancel-todo .cancel-button {
+      border: none;
+      background: none;
+      font-size: 26px;
+      color: #e20c28; }
+      .new-todo .cancel-todo .cancel-button:focus {
+        outline: 0; }
+      .new-todo .cancel-todo .cancel-button:active {
+        background-color: #ECEFF1;
+        border-radius: 4px; }
+      .new-todo .cancel-todo .cancel-button:hover {
+        color: #8f0a0b; }
 
 .footer {
   padding: 20px 10px;
@@ -107,47 +129,91 @@
   .footer .clear-button {
     border: none;
     color: #fff;
-    box-shadow: 1px 3px 10px 6px #ccc;
-    background-color: red;
-    float: left;
-    font-size: 22px;
+    box-shadow: 1px 3px 10px 6px #CFD8DC;
+    background-color: #e20c28;
+    float: right;
     border-radius: 5px;
     padding: 5px 15px; }
     .footer .clear-button:focus {
       outline: 0; }
     .footer .clear-button:hover {
-      background-color: #B71C1C; }
+      background-color: #8f0a0b; }
     .footer .clear-button:active {
-      background-color: red; }
+      background-color: #e20c28; }
   .footer .add-button {
     border: none;
     color: #fff;
-    box-shadow: 1px 3px 10px 6px #ccc;
-    background-color: #7FB454;
-    float: right;
+    box-shadow: 1px 3px 10px 6px #CFD8DC;
+    background-color: #7cad3e;
+    float: left;
     padding: 0;
-    height: 95px;
-    width: 95px;
-    font-size: 60px;
+    height: 85px;
+    width: 85px;
     border-radius: 50%; }
     .footer .add-button:focus {
       outline: 0; }
     .footer .add-button:hover {
-      background-color: #3B7E41; }
+      background-color: #4a6c2f; }
     .footer .add-button:active {
-      background-color: #7FB454; }
+      background-color: #7cad3e; }
+
+@media (max-width: 576px) {
+  .interface {
+    width: 90%; }
+  .heading-font, .interface .header span {
+    font-size: 24px; }
+  .task-font, .todo-item .container {
+    font-size: 20px; }
+  .add-button-font, .footer .add-button {
+    font-size: 40px; }
+  .add-button {
+    width: 65px !important;
+    height: 65px !important; }
+  .clear-button-font, .footer .clear-button {
+    font-size: 16px; } }
+
+@media (min-width: 576px) and (max-width: 768px) {
+  .interface {
+    width: 80%; } }
+
+@media (min-width: 768px) and (max-width: 992px) {
+  .interface {
+    width: 75%; } }
+
+@media (min-width: 992px) and (max-width: 1200px) {
+  .interface {
+    width: 60%; } }
+
+@media (min-width: 1200px) {
+  .interface {
+    width: 50%; }
+  .heading-font, .interface .header span {
+    font-size: 32px; }
+  .add-button-font, .footer .add-button {
+    font-size: 65px; }
+  .add-button {
+    width: 100px !important;
+    height: 100px !important; }
+  .clear-button-font, .footer .clear-button {
+    font-size: 26px; } }
+
+@media (max-height: 500px) {
+  .interface {
+    margin: 10px auto !important; } }
 
 body {
-  background-color: #1B4D87; }
+  background-color: #586c91; }
 
 .interface {
-  width: 90%;
-  margin: 20% auto;
-  border: 3px solid #030404;
-  border-radius: 5px;
-  background-color: #fff; }
+  border-radius: 6px;
+  background-color: #fff;
+  min-height: 10vh;
+  margin: 100px auto; }
   .interface .header {
-    padding: 10px;
-    background-color: #F0F0F0; }
+    padding: 20px 10px;
+    background-color: #ECEFF1;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    color: #030404; }
   .interface .body {
-    padding: 10px; }
+    padding: 20px 10px; }

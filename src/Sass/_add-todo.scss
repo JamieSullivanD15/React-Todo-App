@@ -1,27 +1,32 @@
 
 .error-text {
   color: $light-red;
-  padding: 0px 25px;
+  padding-left: 45px;
   visibility: hidden;
+  font-size: 18px;
 }
 
 .new-todo {
-  padding: 0px 10px;
+  padding: 0 30px;
   visibility: hidden;
 
   .todo-content {
     input {
-      width: 80%;
+      width: 100%;
     }
   }
 
   .confirm-todo {
+    float: right;
+
     .confirm-button {
       @include create-icon-button("green");
     }
   }
 
   .cancel-todo {
+    float: right;
+
     .cancel-button {
       @include create-icon-button("red");
     }
@@ -35,19 +40,19 @@
 
   .clear-button {
     @include create-footer-button("red");
-    float: left;
-    font-size: 22px;
+    @extend .clear-button-font;
+    float: right;
     border-radius: 5px;
     padding: 5px 15px;
   }
 
   .add-button {
     @include create-footer-button("green");
-    float: right;
+    @extend .add-button-font;
+    float: left;
     padding: 0;
-    height: 95px;
-    width: 95px;
-    font-size: 60px;
+    height: 85px;
+    width: 85px;
     border-radius: 50%;
   }
 } // footer
