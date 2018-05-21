@@ -1,0 +1,78 @@
+// Screens below 576px
+@media(max-width: $phone-sm-width) {
+  .interface {
+    width: 90%;
+  }
+
+  .heading-font {
+    font-size: 24px;
+  }
+
+  .task-font {
+    font-size: 20px;
+  }
+
+  .add-button-font {
+    font-size: 40px;
+  }
+
+  .add-button {
+    width: 65px !important;
+    height: 65px !important;
+  }
+
+  .clear-button-font {
+    font-size: 16px;
+  }
+}
+
+// Screens between 576px and 768px
+@media(min-width: $phone-sm-width) and (max-width: $tablets-md-width) {
+  .interface {
+    width: 80%;
+  }
+}
+
+// Screens between 768px and 992px
+@media(min-width: $tablets-md-width) and (max-width: $laptop-lg-width) {
+  .interface {
+    width: 75%;
+  }
+}
+
+// Screens between 992px and 1200px
+@media(min-width: $laptop-lg-width) and (max-width: $desktop-xl-width) {
+  .interface {
+    width: 60%;
+  }
+}
+
+// Screens above 1200px
+@media(min-width: $desktop-xl-width) {
+  .interface {
+    width: 50%;
+  }
+
+  .heading-font {
+    font-size: 32px;
+  }
+
+  .add-button-font {
+    font-size: 65px;
+  }
+
+  .add-button {
+    width: 100px !important;
+    height: 100px !important;
+  }
+
+  .clear-button-font {
+    font-size: 26px;
+  }
+}
+
+@media(max-height: 500px) {
+  .interface {
+    margin: 10px auto !important;
+  }
+}

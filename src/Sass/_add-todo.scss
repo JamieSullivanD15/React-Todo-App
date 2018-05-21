@@ -1,8 +1,9 @@
 
 .error-text {
   color: $light-red;
-  padding: 0px 25px;
+  padding-left: 45px;
   visibility: hidden;
+  font-size: 18px;
 }
 
 .new-todo {
@@ -12,7 +13,6 @@
   .todo-content {
     input {
       width: 100%;
-      //margin-left: 20px;
     }
   }
 
@@ -26,7 +26,6 @@
 
   .cancel-todo {
     float: right;
-    //margin-right: 15px;
 
     .cancel-button {
       @include create-icon-button("red");
@@ -41,19 +40,19 @@
 
   .clear-button {
     @include create-footer-button("red");
+    @extend .clear-button-font;
     float: right;
-    font-size: 22px;
     border-radius: 5px;
     padding: 5px 15px;
   }
 
   .add-button {
     @include create-footer-button("green");
+    @extend .add-button-font;
     float: left;
     padding: 0;
-    height: 95px;
-    width: 95px;
-    font-size: 60px;
+    height: 85px;
+    width: 85px;
     border-radius: 50%;
   }
 } // footer

@@ -53,18 +53,18 @@ class AddTodo extends Component {
       <div>
         <Row className="new-todo">
           <form onSubmit={this.submitTodo.bind(this)}>
-            <Col className="todo-content" xs={8}>
+            <Col className="todo-content" xs={8} md={10}>
               <input type="text" ref="content" />
             </Col>
           </form>
 
-          <Col className="cancel-todo" xs={1}>
+          <Col className="cancel-todo" xs={1} md={1}>
             <button className="cancel-button" onClick={this.cancelNewTodo}>
               <Glyphicon className="cancel-icon" glyph="remove" />
             </button>
           </Col>
 
-          <Col className="confirm-todo" xs={1}>
+          <Col className="confirm-todo" xs={1} md={1}>
             <button className="confirm-button" onClick={this.submitTodo.bind(this)}>
               <Glyphicon className="confirm-icon" glyph="ok" />
             </button>
@@ -77,7 +77,9 @@ class AddTodo extends Component {
 
         <Row className="footer">
           <Col xs={6}>
-            <button className="add-button" onClick={ this.showTodoInput}>+</button>
+            <span >
+              <button className="add-button" onClick={ this.showTodoInput}>+</button>
+            </span>
           </Col>
           <Col xs={6}>
             <button className="clear-button" onClick={this.clearAll.bind(this)}>Clear All</button>

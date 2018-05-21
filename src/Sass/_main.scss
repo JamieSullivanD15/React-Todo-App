@@ -1,36 +1,28 @@
 @import 'variables';
 @import 'todo-item';
 @import 'add-todo';
+@import 'media-queries';
+@import 'mixins';
 
 body {
   background-color: $dark-blue;
 }
 
-
 .interface {
-  width: 90%;
-  margin: 80px auto;
   border-radius: 6px;
   background-color: #fff;
-  min-height: 60vh;
+  min-height: 10vh;
+  margin: 100px auto;
 
   .header {
     padding: 20px 10px;
     background-color: $light-grey;
-    border-radius: 6px;
-    // display: flex;
-    // align-items: center;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    color: $black;
 
     span {
-      font-size: 30px;
-    }
-
-    .date {
-
-    }
-
-    .num-of-tasks {
-
+      @extend .heading-font;
     }
   }
 

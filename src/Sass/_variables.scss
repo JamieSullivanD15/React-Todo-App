@@ -1,17 +1,37 @@
+// Breakpoints
+$phone-sm-width: 576px;
+$tablets-md-width: 768px;
+$laptop-lg-width: 992px;
+$desktop-xl-width: 1200px;
 
-// Palette 1
-$light-green: #7FB454;
-$dark-green: #3B7E41;
-$light-blue: #60AFE4;
-$dark-blue: #1B4D87;
+// Colour Palette
 $black: #030404;
-$light-grey: #F0F0F0;
-$dark-grey: #ccc;
-$light-red: red;
-$dark-red: #B71C1C;
+$light-grey: #ECEFF1;
+$dark-grey: #CFD8DC;
+$light-green: #7cad3e;
+$dark-green: #4a6c2f;
+$dark-blue: #586c91;
+$light-red: #e20c28;
+$dark-red: #8f0a0b;
 
-// Palette 2
+// Font Super Classes
+.heading-font {
+  font-size: 30px;
+}
 
+.task-font {
+  font-size: 26px;
+}
+
+.add-button-font {
+  font-size: 55px;
+}
+
+.clear-button-font {
+  font-size: 22px;
+}
+
+// Button Mixins
 @mixin create-icon-button($color) {
   border: none;
   background: none;
