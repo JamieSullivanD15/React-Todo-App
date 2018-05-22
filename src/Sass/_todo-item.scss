@@ -1,0 +1,87 @@
+
+.todo-item {
+  vertical-align: middle;
+  word-wrap: break-word;
+
+  .completed-todo {
+    text-decoration: line-through;
+    color: $dark-grey;
+  }
+
+  .delete {
+    .delete-button {
+      @include create-icon-button("red");
+      float: right;
+
+      .delete-icon {
+        vertical-align: middle;
+      }
+    }
+  } // delete
+
+  /* The container */
+  .container {
+    @extend .task-font;
+    display: block;
+    position: relative;
+    padding-left: 40px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    color: $black;
+
+    input {
+      /* Hide the browser's default checkbox */
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+    }
+  } // container
+
+  /* Create a custom checkbox */
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    background-color: #eee;
+
+    &:after {
+      /* Create the checkmark/indicator (hidden when not checked) */
+      content: "";
+      position: absolute;
+      display: none;
+
+      /* Style the checkmark/indicator */
+      left: 12px;
+      top: 6px;
+      width: 7px;
+      height: 15px;
+      border: solid white;
+      border-width: 0 3px 3px 0;
+      -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
+  } //checkmark
+
+  /* On mouse-over, add a grey background color */
+  .container:hover input ~ .checkmark {
+    background-color: $dark-grey;
+  }
+
+  /* When the checkbox is checked, add background color */
+  .container input:checked ~ .checkmark {
+    background-color: $light-green;
+  }
+
+  /* Show the checkmark when checked */
+  .container input:checked ~ .checkmark:after {
+    display: block;
+  }
+} // todo-item

@@ -1,8 +1,8 @@
 .heading-font, .interface .header span {
-  font-size: 30px; }
+  font-size: 26px; }
 
 .task-font, .todo-item .container {
-  font-size: 26px; }
+  font-size: 22px; }
 
 .add-button-font, .footer .add-button {
   font-size: 55px; }
@@ -161,9 +161,9 @@
   .interface {
     width: 90%; }
   .heading-font, .interface .header span {
-    font-size: 24px; }
+    font-size: 22px; }
   .task-font, .todo-item .container {
-    font-size: 20px; }
+    font-size: 18px; }
   .add-button-font, .footer .add-button {
     font-size: 40px; }
   .add-button {
@@ -188,7 +188,7 @@
   .interface {
     width: 50%; }
   .heading-font, .interface .header span {
-    font-size: 32px; }
+    font-size: 28px; }
   .add-button-font, .footer .add-button {
     font-size: 65px; }
   .add-button {
@@ -208,7 +208,7 @@ body {
   border-radius: 6px;
   background-color: #fff;
   min-height: 10vh;
-  margin: 100px auto; }
+  margin: 60px auto; }
   .interface .header {
     padding: 20px 10px;
     background-color: #ECEFF1;

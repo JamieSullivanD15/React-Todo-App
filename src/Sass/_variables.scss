@@ -1,0 +1,96 @@
+
+// Breakpoints
+$phone-sm-width: 576px;
+$tablets-md-width: 768px;
+$laptop-lg-width: 992px;
+$desktop-xl-width: 1200px;
+
+// Colour Palette
+$black: #030404;
+$light-grey: #ECEFF1;
+$dark-grey: #CFD8DC;
+$light-green: #7cad3e;
+$dark-green: #4a6c2f;
+$dark-blue: #586c91;
+$light-red: #e20c28;
+$dark-red: #8f0a0b;
+
+// Font Super Classes
+.heading-font {
+  font-size: 26px;
+}
+
+.task-font {
+  font-size: 22px;
+}
+
+.add-button-font {
+  font-size: 55px;
+}
+
+.clear-button-font {
+  font-size: 22px;
+}
+
+// Button Mixins
+@mixin create-icon-button($color) {
+  border: none;
+  background: none;
+  font-size: 26px;
+
+  &:focus {
+    outline: 0;
+  }
+
+  &:active {
+    background-color: $light-grey;
+    border-radius: 4px;
+  }
+
+  @if $color == "red" {
+    color: $light-red;
+
+    &:hover {
+      color: $dark-red;
+    }
+  } @else if $color == "green" {
+    color: $light-green;
+
+    &:hover {
+      color: $dark-green;
+    }
+  }
+}
+
+@mixin create-footer-button($color) {
+  border: none;
+  color: #fff;
+  box-shadow: 1px 3px 10px 6px $dark-grey;
+
+  &:focus {
+    outline: 0;
+  }
+
+  @if $color == "red" {
+    background-color: $light-red;
+
+    &:hover {
+      background-color: $dark-red;
+    }
+
+    &:active {
+      background-color: $light-red;
+    }
+
+  } @else if $color == "green" {
+    background-color: $light-green;
+
+    &:hover {
+      background-color: $dark-green;
+    }
+
+    &:active {
+      background-color: $light-green;
+    }
+  }
+}
