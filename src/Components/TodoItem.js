@@ -3,14 +3,20 @@ import { Glyphicon, Row, Col } from 'react-bootstrap';
 
 class TodoItem extends Component {
 
+  // When each todo item has been rendered we check to see if it is completed or not
   componentDidMount() {
     this.checkIfPending(this.props.todoItem);
   }
 
+  // Delete todo item that was selected. Pass it back through props delete function
   deleteTodoItem() {
     this.props.deleteTodoItem(this.props.todoItem);
   }
 
+  /*
+   Checks if the current todoItem is completed
+   If it is then mark as checked and apply completed style
+  */
   checkIfPending(todoItem) {
     const content = this.refs.todoContent;
 
@@ -22,13 +28,20 @@ class TodoItem extends Component {
     }
   }
 
+  /*
+    If checkbox is clicked, then toggle todoItem isCompleted on or off
+    Check if it is completed nad add appropriate style
+    Update todo list in local storage through props update function
+  */
   toggleCheckbox() {
     this.props.todoItem.isCompleted = !this.props.todoItem.isCompleted;
-
     this.checkIfPending(this.props.todoItem);
     this.props.updateTodoItem(this.props.todoItem);
   }
 
+  /*
+    Each todoItem is rendered here. It includes a checkbox, todo content and a delete icon
+  */
   render() {
     return (
       <div>
@@ -52,9 +65,5 @@ class TodoItem extends Component {
     );
   }
 }
-
-// TodoItem.propTypes = {
-//   // prop: PropTypes.type.isRequired
-// }
 
 export default TodoItem;

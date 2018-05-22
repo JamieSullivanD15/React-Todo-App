@@ -17,7 +17,7 @@
         vertical-align: middle;
       }
     }
-  }
+  } // delete
 
   /* The container */
   .container {
@@ -39,7 +39,7 @@
       opacity: 0;
       cursor: pointer;
     }
-  }
+  } // container
 
   /* Create a custom checkbox */
   .checkmark {
@@ -68,7 +68,7 @@
       -ms-transform: rotate(45deg);
       transform: rotate(45deg);
     }
-  }
+  } //checkmark
 
   /* On mouse-over, add a grey background color */
   .container:hover input ~ .checkmark {

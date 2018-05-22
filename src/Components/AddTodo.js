@@ -14,8 +14,13 @@ class AddTodo extends Component {
     this.cancelNewTodo = this.cancelNewTodo.bind(this);
   }
 
+  /*
+    When form is submitted, check if there is input then submit a new todoItem
+    Upadate state and then pass new object through callback props function addTodo
+    Remove input after submit by calling cancelNewTodo
+  */
   submitTodo(e) {
-    if(this.refs.content.value === '') {
+    if (this.refs.content.value === '') {
       document.querySelector('.error-text').style.visibility = 'visible';
     } else {
       this.setState({
@@ -31,6 +36,7 @@ class AddTodo extends Component {
     e.preventDefault();
   }
 
+  // Cancel, remove input, its value and error text
   cancelNewTodo() {
     const newTodo = document.querySelector('.new-todo');
     document.querySelector('.error-text').style.visibility = 'hidden';
@@ -38,16 +44,22 @@ class AddTodo extends Component {
     newTodo.firstChild.firstChild.firstChild.value = '';
   }
 
+  // Show new todo input field
   showTodoInput() {
     document.querySelector('.new-todo').style.visibility = 'visible';
   }
 
+  // Prompt confirmation to clear all tasks. Call props clearAll function on confirm
   clearAll() {
     if (window.confirm('Delete all tasks?')) {
       this.props.clearAll();
     }
   }
 
+  /*
+    This compnonent consists of the new todo input, error text, submit and cancel buttons
+    It also contains the footer which holds the add and clear all buttons
+  */
   render() {
     return (
       <div>

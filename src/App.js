@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Todos from './Components/Todos';
 import AddTodo from './Components/AddTodo';
 import { Grid, Row, Col } from 'react-bootstrap';
@@ -15,11 +16,15 @@ class App extends Component {
     this.getTasksPending = this.getTasksPending.bind(this);
   }
 
+  // Get list of todos when component has rendered
   componentDidMount() {
     this.getTodos();
   }
 
-  // Function will set state with todo items from local storage
+  /*
+    Function will set component state with todo items from local storage
+    Pass the list of todos to determine which todos are pending and which are not
+  */
   getTodos(checkbox) {
     const todos = this.createLocalStorageTodos();
 
@@ -32,6 +37,10 @@ class App extends Component {
     this.getTasksPending(todos);
   }
 
+  /*
+    Determine how many tasks are pending by counting each task that is not completed
+    Update text to reflect number of pending tasks
+  */
   getTasksPending(todos) {
     let count = 0;
 
@@ -45,6 +54,10 @@ class App extends Component {
     count === 1 ? this.refs.tasksPendingText.innerHTML = ' Task Pending' : this.refs.tasksPendingText.innerHTML = ' Tasks Pending';
   }
 
+  /*
+    Creates a new array of todos in local storage if one is not present
+    Parses todos if an array is already present
+  */
   createLocalStorageTodos() {
     let todos;
 
@@ -57,6 +70,10 @@ class App extends Component {
     return todos;
   }
 
+  /*
+    Called whenever a new todo item is added to the list
+    Retrieves todos from local storage and updates it with new todo
+  */
   handleSaveTodo(todo) {
     const todos = this.createLocalStorageTodos();
     todos.push(todo);
@@ -64,6 +81,10 @@ class App extends Component {
     this.getTodos();
   }
 
+  /*
+    Called whenever a todo item is deleted from  the list
+    Retrieves todos from local storage and updates todo list
+  */
   handleDeleteTodo(todoItem) {
     const todos = this.createLocalStorageTodos();
 
@@ -77,6 +98,10 @@ class App extends Component {
     this.getTodos();
   }
 
+  /*
+    Called whenever a todo item is checked or unchecked
+    Retrieves todos from local storage and updates todo list
+  */
   handleUpdateTodo(todoItem) {
     const todos = this.createLocalStorageTodos();
 
@@ -90,11 +115,18 @@ class App extends Component {
     this.getTodos();
   }
 
+  /*
+    Called when clear all button is clicked. Removes everything from local storage
+    and retrieves todo list
+  */
   handleClearAll() {
     localStorage.clear();
     this.getTodos();
   }
 
+  /*
+    Format date to display day name - date subscript - month
+  */
   formatDate(date) {
     let day;
     let subscript;
@@ -169,8 +201,12 @@ class App extends Component {
   }
 }
 
-// App.propTypes = {
-//   // prop: PropTypes.type.isRequired
-// }
+App.propTypes = {
+  todos: PropTypes.array,
+  deleteTodo: PropTypes.func,
+  updateTodo: PropTypes.func,
+  addTodo: PropTypes.func,
+  clearAll: PropTypes.func
+}
 
 export default App;
