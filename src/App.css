@@ -165,7 +165,8 @@
   .task-font, .todo-item .container {
     font-size: 18px; }
   .add-button-font, .footer .add-button {
-    font-size: 40px; }
+    font-size: 40px;
+    padding-bottom: 10px; }
   .add-button {
     width: 65px !important;
     height: 65px !important; }
@@ -174,15 +175,21 @@
 
 @media (min-width: 576px) and (max-width: 768px) {
   .interface {
-    width: 80%; } }
+    width: 80%; }
+  .add-button-font, .footer .add-button {
+    padding-bottom: 10px; } }
 
 @media (min-width: 768px) and (max-width: 992px) {
   .interface {
-    width: 75%; } }
+    width: 75%; }
+  .add-button-font, .footer .add-button {
+    padding-bottom: 10px; } }
 
 @media (min-width: 992px) and (max-width: 1200px) {
   .interface {
-    width: 60%; } }
+    width: 60%; }
+  .add-button-font, .footer .add-button {
+    padding-bottom: 10px; } }
 
 @media (min-width: 1200px) {
   .interface {
@@ -190,7 +197,8 @@
   .heading-font, .interface .header span {
     font-size: 28px; }
   .add-button-font, .footer .add-button {
-    font-size: 65px; }
+    font-size: 65px;
+    padding-bottom: 10px; }
   .add-button {
     width: 100px !important;
     height: 100px !important; }

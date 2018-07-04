@@ -3,7 +3,7 @@ import { Glyphicon, Row, Col } from 'react-bootstrap';
 
 class TodoItem extends Component {
 
-  // When each todo item has been rendered we check to see if it is completed or not
+  // When each todo item has been created we check to see if it is completed or not before rendering
   componentDidMount() {
     this.checkIfPending(this.props.todoItem);
   }
@@ -30,7 +30,7 @@ class TodoItem extends Component {
 
   /*
     If checkbox is clicked, then toggle todoItem isCompleted on or off
-    Check if it is completed nad add appropriate style
+    Check if it is completed and add appropriate style
     Update todo list in local storage through props update function
   */
   toggleCheckbox() {
