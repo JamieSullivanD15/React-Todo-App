@@ -16,7 +16,7 @@ class App extends Component {
     this.getTasksPending = this.getTasksPending.bind(this);
   }
 
-  // Get list of todos when component has rendered
+  // Get list of todos when the component is created before being rendered
   componentDidMount() {
     this.getTodos();
   }
@@ -25,7 +25,7 @@ class App extends Component {
     Function will set component state with todo items from local storage
     Pass the list of todos to determine which todos are pending and which are not
   */
-  getTodos(checkbox) {
+  getTodos() {
     const todos = this.createLocalStorageTodos();
 
     this.setState({
